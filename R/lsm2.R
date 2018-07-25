@@ -63,7 +63,7 @@
 #' @export
 #' @import stats
 
-lsm.default <- function(formula , data )
+lsm2 <- function(formula , data )
 {
   mf <- model.frame(formula = formula, data = data)
 
@@ -76,7 +76,7 @@ lsm.default <- function(formula , data )
 }
 
 
-lsm2 <- function(formula , data)
+lsmdefault  <- function(formula , data)
 {
 
   est <- lsm.default(formula , data)
@@ -86,7 +86,7 @@ lsm2 <- function(formula , data)
   est
 }
 
-print.lsm2 <- function(x, ...)
+print.lsmdefault  <- function(x, ...)
 {
   cat("\nCall:\n")
   print(x$call)
