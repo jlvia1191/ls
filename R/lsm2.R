@@ -102,5 +102,3 @@ print.lsm2 <- function(x, ...)
 
 
 
-
-

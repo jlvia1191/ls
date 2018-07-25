@@ -32,7 +32,7 @@ Installation
 
 ``` {r}
 library(devtools)
-install_github("jlvia1191/lsm2")
+install_github("jlvia1191/ls")
 ```
 
 Example Usage
