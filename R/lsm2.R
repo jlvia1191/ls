@@ -86,7 +86,7 @@ lsm2.default  <- function(formula , data)
   est
 }
 
-print.lsm2.mdefault  <- function(x, ...)
+print.lsm2.default  <- function(x, ...)
 {
   cat("\nCall:\n")
   print(x$call)
