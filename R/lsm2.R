@@ -8,9 +8,9 @@
 #' @return  lsm2 returns an object of class "lsm2".
 #' An object of class "lsm2" is a list containing at least the #' following components:
 #'
-#' log_Likelihood:    Estimation of the log likelihood.
-#' populations:   Total number J of populations in the model.
-#'  z_j    : Value of Zj (the sum of the observations in the jth population).
+#' \item{log_Likelihood}{Estimation of the log likelihood.}
+#' item{populations}{Total number J of populations in the model.}
+#'  \item{z_j}{ Value of Zj (the sum of the observations in the jth population)}.
 
 #' @details The saturated model is characterized by the assumptions 1 and 2 presented in section 2.3 by Llinas (2006, ISSN:2389-8976).
 #' @references [1] Humberto Jesus Llinas. (2006). Accuracies in the theory of the logistic models. Revista Colombiana De Estadistica,29(2), 242-244.
@@ -76,17 +76,17 @@ lsm2 <- function(formula , data )
 }
 
 
-lsmdefault  <- function(formula , data)
+lsm2.default  <- function(formula , data)
 {
 
-  est <- lsm.default(formula , data)
+  est <- lsm2(formula , data)
 
   est$call <- match.call()
-  class(est) <- "lsm"
+  class(est) <- "lsm2"
   est
 }
 
-print.lsmdefault  <- function(x, ...)
+print.lsm2.mdefault  <- function(x, ...)
 {
   cat("\nCall:\n")
   print(x$call)

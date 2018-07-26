@@ -15,9 +15,9 @@ lsm2(formula, data)
 lsm2 returns an object of class "lsm2".
 An object of class "lsm2" is a list containing at least the #' following components:
 
-log_Likelihood:    Estimation of the log likelihood.
-populations:   Total number J of populations in the model.
- z_j    : Value of Zj (the sum of the observations in the jth population).
+\item{log_Likelihood}{Estimation of the log likelihood.}
+item{populations}{Total number J of populations in the model.}
+ \item{z_j}{ Value of Zj (the sum of the observations in the jth population)}.
 }
 \description{
 When the values of the outcome variable Y are either 0 or 1, the function lsm() calculates the estimation of the log likelihood in the saturated model. This model is characterized by Llinas (2006, ISSN:2389-8976) in section 2.3 through the assumptions 1 and 2. If Y is dichotomous and the data are grouped in J populations, it is recommended to use the function lsm() because it works very well for all K.
