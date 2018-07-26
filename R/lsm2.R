@@ -5,12 +5,13 @@
 
 #' @param formula An expression of the form y ~ model, where y is the outcome variable (binary or dichotomous: its values are 0 or 1).
 #' @param data an optional data frame, list or environment (or object coercible by as.data.frame to a data frame) containing the variables in the model. If not found in data, the variables are taken from environment(formula), typically the environment from which lsm() is called.
-#' @return  lsm2 returns an object of class "lsm2".
-#' An object of class "lsm2" is a list containing at least the #' following components:
+#' @return  \code{lsm2} returns an object of class  \code{"lsm2"}.
+#'
+#'An object of class  \code{"lsm2"} is a list containing at least the following components:
 #'
 #' \item{log_Likelihood}{Estimation of the log likelihood.}
-#' item{populations}{Total number J of populations in the model.}
-#'  \item{z_j}{ Value of Zj (the sum of the observations in the jth population)}.
+#' \item{populations}{Total number J of populations in the model.}
+#' \item{z_j}{ Value of Zj (the sum of the observations in the jth population)}.
 
 #' @details The saturated model is characterized by the assumptions 1 and 2 presented in section 2.3 by Llinas (2006, ISSN:2389-8976).
 #' @references [1] Humberto Jesus Llinas. (2006). Accuracies in the theory of the logistic models. Revista Colombiana De Estadistica,29(2), 242-244.
@@ -73,6 +74,7 @@ lsm2 <- function(formula , data )
   Lj <-ifelse ((res[, 3]) == 0 | (res[, 3]) == 1, 0, sj)
   sat <- sum(Lj)
   r <- list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj)  )
+
 }
 
 

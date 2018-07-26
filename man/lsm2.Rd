@@ -12,12 +12,13 @@ lsm2(formula, data)
 \item{data}{an optional data frame, list or environment (or object coercible by as.data.frame to a data frame) containing the variables in the model. If not found in data, the variables are taken from environment(formula), typically the environment from which lsm() is called.}
 }
 \value{
-lsm2 returns an object of class "lsm2".
-An object of class "lsm2" is a list containing at least the #' following components:
+\code{lsm2} returns an object of class  \code{"lsm2"}.
+
+An object of class  \code{"lsm2"} is a list containing at least the following components:
 
 \item{log_Likelihood}{Estimation of the log likelihood.}
-item{populations}{Total number J of populations in the model.}
- \item{z_j}{ Value of Zj (the sum of the observations in the jth population)}.
+\item{populations}{Total number J of populations in the model.}
+\item{z_j}{ Value of Zj (the sum of the observations in the jth population)}.
 }
 \description{
 When the values of the outcome variable Y are either 0 or 1, the function lsm() calculates the estimation of the log likelihood in the saturated model. This model is characterized by Llinas (2006, ISSN:2389-8976) in section 2.3 through the assumptions 1 and 2. If Y is dichotomous and the data are grouped in J populations, it is recommended to use the function lsm() because it works very well for all K.
