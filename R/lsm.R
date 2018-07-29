@@ -84,10 +84,9 @@ lsm2.default <- function(formula , data)
 {
 
   est <- lsm2(formula , data)
-
   est$call <- match.call()
   class(est) <- "lsm"
-  est
+
 }
 
 print.lsm2  <- function(x, ...)
