@@ -15,7 +15,7 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/lsm)](https://cran.r-project.org/package=lsm)
 
-Welcome to the *lsm2* package!
+Welcome to the *lsm* package!
 =================================
 
 

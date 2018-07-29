@@ -1,4 +1,4 @@
-# lsm2.R
+# lsm.R
 
 #' @title Estimation of the log Likelihood of the Saturated Model
 #' @description When the values of the outcome variable Y are either 0 or 1, the function lsm() calculates the estimation of the log likelihood in the saturated model. This model is characterized by Llinas (2006, ISSN:2389-8976) in section 2.3 through the assumptions 1 and 2. If Y is dichotomous and the data are grouped in J populations, it is recommended to use the function lsm() because it works very well for all K.
@@ -24,7 +24,7 @@
 #' CHD <- c(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0)
 #'
 #'  data <- data.frame (CHD, AGE)
-#' lsm2(CHD ~ AGE , data)
+#' lsm(CHD ~ AGE , data)
 #'
 #' # Other case.
 #'
@@ -41,10 +41,10 @@
 #'  x10 <- c(5, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8)
 #'
 #'  data <- data.frame (y, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10)
-#'  lsm2(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
+#'  lsm(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
 #'
 #' ## For more ease, use the following notation.
-#'  lsm2(y~., data)
+#'  lsm(y~., data)
 #'
 #' ## Other case.
 #'
@@ -56,15 +56,15 @@
 #'  x5 <- as.factor(c(5, 5, 5, 6, 6, 6, 6, 7, 7, 8, 8, 8))
 #'
 #'  data <- data.frame (y, x1, x2, x3, x4, x5)
-#'  lsm2(y ~ x1 + x2 + x3 + x4 + x5, data)
+#'  lsm(y ~ x1 + x2 + x3 + x4 + x5, data)
 #'
 #' ## For more ease, use the following notation.
-#'  lsm2(y~., data)
+#'  lsm(y~., data)
 #'
 #' @export
 #' @import stats
 
-lsm1 <- function(formula , data )
+lsm <- function(formula , data )
 {
   mf <- model.frame(formula = formula, data = data)
 
@@ -83,7 +83,7 @@ lsm2<- function(x, ...) UseMethod("lsm2")
 lsm2.default <- function(formula , data)
 {
 
-  est <- lsm1 (formula , data)
+  est <- lsm2(formula , data)
 
   est$call <- match.call()
   class(est) <- "lsm2"

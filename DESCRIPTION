@@ -1,4 +1,4 @@
-Package: lsm2
+Package: lsm
 Type: Package
 Title: Estimation of the log Likelihood of the Saturated Model
 Version: 0.1.7
@@ -16,5 +16,5 @@ License: MIT + file LICENSE
 LazyData: TRUE
 RoxygenNote: 6.0.1
 Collate:
-    'lsm2.R'
+    'lsm.R'
 
