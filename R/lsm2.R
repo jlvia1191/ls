@@ -64,7 +64,7 @@
 #' @export
 #' @import stats
 
-lsm2 <- function(formula , data )
+lsm1 <- function(formula , data )
 {
   mf <- model.frame(formula = formula, data = data)
 
@@ -78,18 +78,19 @@ lsm2 <- function(formula , data )
 
 }
 
+lsm2<- function(x, ...) UseMethod("lsm2")
 
 lsm2.default <- function(formula , data)
 {
 
-  est <- lsm2 (formula , data)
+  est <- lsm1 (formula , data)
 
   est$call <- match.call()
   class(est) <- "lsm2"
   est
 }
 
-print.lsm2.default  <- function(x, ...)
+print.lsm2  <- function(x, ...)
 {
   cat("\nCall:\n")
   print(x$call)
