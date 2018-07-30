@@ -86,7 +86,7 @@ library(lsm)
  
 ## For more ease, use the following notation.
  
- ls(y ~., data)
+ lsm(y ~., data)
  
 ```
 
