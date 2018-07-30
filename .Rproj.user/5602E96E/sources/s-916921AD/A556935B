@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "ISO8859-1",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "4057876739",
     "id" : "A556935B",
-    "lastKnownWriteTime" : 1532913480,
-    "last_content_update" : 1532913480876,
+    "lastKnownWriteTime" : 1532981870,
+    "last_content_update" : 1532981870404,
     "path" : "~/GitHub/ls/README.Rmd",
     "project_path" : "README.Rmd",
     "properties" : {
-        "cursorPosition" : "63,4",
+        "cursorPosition" : "108,5",
         "docOutlineVisible" : "0",
-        "scrollLine" : "0"
+        "scrollLine" : "96"
     },
     "relative_order" : 2,
     "source_on_save" : false,

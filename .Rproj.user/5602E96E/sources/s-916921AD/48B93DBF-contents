@@ -47,7 +47,7 @@ library(lsm)
   CHD <- c(0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0)
   
   data <- data.frame (CHD,  AGE )
-  ls(CHD ~ AGE , data)
+  lsm(CHD ~ AGE , data)
  
 ```
 
@@ -68,7 +68,7 @@ library(lsm)
  x10 <- c(5, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8)
  
  data <- data.frame (y, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10)
- ls(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
+ lsm(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
  
 ## For more ease, use the following notation.
  
