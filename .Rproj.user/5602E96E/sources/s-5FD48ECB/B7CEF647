@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "ISO8859-1",
     "folds" : "",
-    "hash" : "1216358204",
+    "hash" : "2530745939",
     "id" : "B7CEF647",
-    "lastKnownWriteTime" : 1532970096,
-    "last_content_update" : 1532970096400,
+    "lastKnownWriteTime" : 1532971017,
+    "last_content_update" : 1532971017048,
     "path" : "~/GitHub/ls/R/ls.R",
     "project_path" : "R/ls.R",
     "properties" : {
-        "cursorPosition" : "44,0",
+        "cursorPosition" : "44,5",
         "scrollLine" : "36"
     },
     "relative_order" : 4,

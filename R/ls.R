@@ -42,6 +42,7 @@ lsm.default <- function(formula , data)
   est <- ls(formula , data)
   est$call <- match.call()
   class(est) <- "ls"
+  est
 }
 
 print.lsm  <- function(x, ...)
