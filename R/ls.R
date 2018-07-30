@@ -1,13 +1,13 @@
-# lsm.R
+# ls.R
 
 #' @title Estimation of the log Likelihood of the Saturated Model
 #' @description When the values of the outcome variable Y are either 0 or 1, the function lsm() calculates the estimation of the log likelihood in the saturated model. This model is characterized by Llinas (2006, ISSN:2389-8976) in section 2.3 through the assumptions 1 and 2. If Y is dichotomous and the data are grouped in J populations, it is recommended to use the function lsm() because it works very well for all K.
 
 #' @param formula An expression of the form y ~ model, where y is the outcome variable (binary or dichotomous: its values are 0 or 1).
 #' @param data an optional data frame, list or environment (or object coercible by as.data.frame to a data frame) containing the variables in the model. If not found in data, the variables are taken from environment(formula), typically the environment from which lsm() is called.
-#' @return  \code{lsm2} returns an object of class  \code{"lsm2"}.
+#' @return  \code{ls} returns an object of class  \code{"ls"}.
 #'
-#'An object of class  \code{"lsm2"} is a list containing at least the following components:
+#'An object of class  \code{"ls"} is a list containing at least the following components:
 #'
 #' \item{log_Likelihood}{Estimation of the log likelihood.}
 #' \item{populations}{Total number J of populations in the model.}
@@ -24,7 +24,7 @@
 #' CHD <- c(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0)
 #'
 #'  data <- data.frame (CHD, AGE)
-#' lsm(CHD ~ AGE , data)
+#' ls(CHD ~ AGE , data)
 #'
 #' # Other case.
 #'
@@ -41,10 +41,10 @@
 #'  x10 <- c(5, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8)
 #'
 #'  data <- data.frame (y, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10)
-#'  lsm(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
+#'  ls(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
 #'
 #' ## For more ease, use the following notation.
-#'  lsm(y~., data)
+#'  ls(y~., data)
 #'
 #' ## Other case.
 #'
@@ -56,15 +56,15 @@
 #'  x5 <- as.factor(c(5, 5, 5, 6, 6, 6, 6, 7, 7, 8, 8, 8))
 #'
 #'  data <- data.frame (y, x1, x2, x3, x4, x5)
-#'  lsm(y ~ x1 + x2 + x3 + x4 + x5, data)
+#'  ls(y ~ x1 + x2 + x3 + x4 + x5, data)
 #'
 #' ## For more ease, use the following notation.
-#'  lsm(y~., data)
+#'  ls(y~., data)
 #'
 #' @export
 #' @import stats
 
-lsm <- function(formula , data )
+ls <- function(formula , data )
 {
   mf <- model.frame(formula = formula, data = data)
 
@@ -73,22 +73,22 @@ lsm <- function(formula , data )
   sj <- (res[, 1] * log(res[, 3]) + (res[, 2] - res[, 1]) * log(1 - res[, 3]))
   Lj <-ifelse((res[, 3]) == 0 | (res[, 3]) == 1, 0, sj)
   sat <- sum (Lj)
-  r <- list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj))
+list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj))
 
 
 }
 
-lsm2<- function(x, ...) UseMethod("lsm2")
+lsm<- function(x, ...) UseMethod("lsm")
 
-lsm2.default <- function(formula , data)
+lsm.default <- function(formula , data)
 {
-  est <- lsm(formula , data)
+  est <- ls(formula , data)
   est$call <- match.call()
-  class(est) <- "lsm"
+  class(est) <- "ls"
 
 }
 
-print.lsm2  <- function(x, ...)
+print.lsm  <- function(x, ...)
 {
   cat("\nCall:\n")
   print(x$call)

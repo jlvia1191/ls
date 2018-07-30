@@ -1,7 +1,7 @@
-# lsm2
+# ls
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/lsm)](https://cran.r-project.org/package=lsm)
 
-Welcome to the *lsm2* package!
+Welcome to the *ls* package!
 =================================
 
 
@@ -41,13 +41,13 @@ Example Usage
  Hosmer, D. (2013) page 3: Age and coranary Heart Disease (CHD) Status of 20 subjects:
 
 ```{r}
-library(lsm2)
+library(lsm)
 
   AGE <- c(20,23,24,25,25,26,26,28,28,29,30,30,30,30,30,30,30,32,33,33)
   CHD <- c(0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0)
   
   data <- data.frame (CHD,  AGE )
-  lsm2(CHD ~ AGE , data)
+  ls(CHD ~ AGE , data)
  
 ```
 
@@ -68,11 +68,11 @@ library(lsm2)
  x10 <- c(5, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8)
  
  data <- data.frame (y, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10)
- lsm2(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
+ ls(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
  
 ## For more ease, use the following notation.
  
- lsm(y ~., data)
+ ls(y ~., data)
  
 ```
 
@@ -88,9 +88,9 @@ y <- as.factor(c(1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1))
   x5 <-	as.factor(c(5, 5, 5, 6, 6, 6, 6, 7, 7, 8, 8, 8))
 
    data <- data.frame (y, x1, x2, x3, x4, x5) 
-  lsm2(y ~ x1 + x2 + x3 + x4 + x5, data)
+  ls(y ~ x1 + x2 + x3 + x4 + x5, data)
   
 ## For more ease, use the following notation.
   
-  lsm2(y~., data)
+  ls(y~., data)
 ```
