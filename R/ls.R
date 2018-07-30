@@ -41,7 +41,7 @@ lsm.default <- function(formula , data)
 {
   est <- ls(formula , data)
   est$call <- match.call()
-  class(est) <- "ls"
+  class(est) <- "lsm"
   est
 }
 
