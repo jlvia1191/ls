@@ -1,7 +1,7 @@
-# ls
+# lsm
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/lsm)](https://cran.r-project.org/package=lsm)
 
-Welcome to the *ls* package!
+Welcome to the *lsm* package!
 =================================
 
 
@@ -72,7 +72,7 @@ library(lsm)
  
 ## For more ease, use the following notation.
  
- ls(y ~., data)
+ lsm(y ~., data)
  
 ```
 
@@ -88,9 +88,9 @@ y <- as.factor(c(1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1))
   x5 <-	as.factor(c(5, 5, 5, 6, 6, 6, 6, 7, 7, 8, 8, 8))
 
    data <- data.frame (y, x1, x2, x3, x4, x5) 
-  ls(y ~ x1 + x2 + x3 + x4 + x5, data)
+  lsm(y ~ x1 + x2 + x3 + x4 + x5, data)
   
 ## For more ease, use the following notation.
   
-  ls(y~., data)
+  lsm(y~., data)
 ```

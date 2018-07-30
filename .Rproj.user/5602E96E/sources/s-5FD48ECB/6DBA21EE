@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "ISO8859-1",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "2237032541",
     "id" : "6DBA21EE",
-    "lastKnownWriteTime" : 1532966914,
-    "last_content_update" : 1532966914835,
+    "lastKnownWriteTime" : 1532973102,
+    "last_content_update" : 1532973102472,
     "path" : "~/GitHub/ls/DESCRIPTION",
     "project_path" : "DESCRIPTION",
     "properties" : {
-        "cursorPosition" : "3,14",
-        "scrollLine" : "0"
+        "cursorPosition" : "18,8",
+        "scrollLine" : "6"
     },
     "relative_order" : 3,
     "source_on_save" : false,
