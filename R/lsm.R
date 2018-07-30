@@ -77,18 +77,16 @@ lsm <- function(formula , data )
 
   r$call <- match.call()
   class(r) <- "lsm"
-  r
+
+  cat("\nCall:\n")
+  print(r$call)
+  cat("\nLog_Likelihood: \n")
+  print(r$log_Likelihood)
+  cat("\nPopulations: \n")
+  print(r$populations)
 
 }
-print.lsm  <- function(x, ...)
-{
-  cat("\nCall:\n")
-  print(x$call)
-  cat("\nLog_Likelihood: \n")
-  print(x$log_Likelihood)
-  cat("\nPopulations: \n")
-  print(x$populations)
-}
+
 
 
 

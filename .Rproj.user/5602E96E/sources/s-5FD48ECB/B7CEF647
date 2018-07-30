@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "ISO8859-1",
     "folds" : "",
-    "hash" : "469376906",
+    "hash" : "216142243",
     "id" : "B7CEF647",
-    "lastKnownWriteTime" : 1532973096,
-    "last_content_update" : 1532973096,
+    "lastKnownWriteTime" : 1532974088,
+    "last_content_update" : 1532974088129,
     "path" : "~/GitHub/ls/R/lsm.R",
     "project_path" : "R/lsm.R",
     "properties" : {
-        "cursorPosition" : "12,6",
-        "scrollLine" : "12"
+        "cursorPosition" : "85,9",
+        "scrollLine" : "75"
     },
     "relative_order" : 4,
     "source_on_save" : false,
