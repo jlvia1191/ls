@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1532910017827.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CB841E9E",
+    "lastKnownWriteTime" : 1532967788,
+    "last_content_update" : 1532967788,
+    "path" : "~/GitHub/ls/man/ls.Rd",
+    "project_path" : "man/ls.Rd",
+    "properties" : {
+        "cursorPosition" : "36,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}
