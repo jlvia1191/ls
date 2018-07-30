@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "ISO8859-1",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "750239781",
     "id" : "B7CEF647",
-    "lastKnownWriteTime" : 1532967786,
-    "last_content_update" : 1532967786913,
+    "lastKnownWriteTime" : 1532969732,
+    "last_content_update" : 1532969732320,
     "path" : "~/GitHub/ls/R/ls.R",
     "project_path" : "R/ls.R",
     "properties" : {
-        "cursorPosition" : "19,0",
-        "scrollLine" : "19"
+        "cursorPosition" : "33,0",
+        "scrollLine" : "28"
     },
     "relative_order" : 4,
     "source_on_save" : false,

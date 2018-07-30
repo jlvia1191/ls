@@ -30,7 +30,7 @@ ls <- function(formula , data )
   sj <- (res[, 1] * log(res[, 3]) + (res[, 2] - res[, 1]) * log(1 - res[, 3]))
   Lj <-ifelse((res[, 3]) == 0 | (res[, 3]) == 1, 0, sj)
   sat <- sum (Lj)
-list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj))
+r<-list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj))
 
 
 }
