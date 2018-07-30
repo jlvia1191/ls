@@ -82,7 +82,6 @@ lsm2<- function(x, ...) UseMethod("lsm2")
 
 lsm2.default <- function(formula , data)
 {
-
   est <- lsm(formula , data)
   est$call <- match.call()
   class(est) <- "lsm"
