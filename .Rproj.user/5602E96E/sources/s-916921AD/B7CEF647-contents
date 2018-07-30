@@ -63,6 +63,12 @@
 #'
 #' @export
 #' @import stats
+#'
+
+
+
+lsm <- function(x, ...) UseMethod("lsm")
+
 
 lsm <- function(formula , data )
 {
@@ -77,14 +83,17 @@ lsm <- function(formula , data )
 
   r$call <- match.call()
   class(r) <- "lsm"
+  r
+}
 
+print.lsm  <- function(x, ...)
+{
   cat("\nCall:\n")
-  print(r$call)
+  print(x$call)
   cat("\nLog_Likelihood: \n")
-  print(r$log_Likelihood)
+  print(x$log_Likelihood)
   cat("\nPopulations: \n")
-  print(r$populations)
-
+  print(x$populations)
 }
 
 
