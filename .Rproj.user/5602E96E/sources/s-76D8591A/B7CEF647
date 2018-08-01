@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "B7CEF647",
-    "lastKnownWriteTime" : 1533133539,
-    "last_content_update" : 1533133539181,
+    "lastKnownWriteTime" : 1533134354,
+    "last_content_update" : 1533134354192,
     "path" : "~/GitHub/ls/R/lsm.R",
     "project_path" : "R/lsm.R",
     "properties" : {
-        "cursorPosition" : "82,11",
-        "scrollLine" : "89"
+        "cursorPosition" : "86,1",
+        "scrollLine" : "77"
     },
     "relative_order" : 4,
     "source_on_save" : false,
