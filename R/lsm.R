@@ -61,13 +61,10 @@
 #' ## For more ease, use the following notation.
 #'  lsm(y~., data)
 #'
-#' @export
+#' @export lsm
 #' @import stats
 #'
 
-
-
-lsm <- function(x, ...) UseMethod("lsm")
 
 
 lsm <- function(formula , data )
@@ -77,16 +74,22 @@ lsm <- function(formula , data )
   res <-do.call(rbind, (tapply(as.vector(mf[, 1]), t(apply((mf[, -1,drop =FALSE]), 1, paste0,collapse = "-")),function(x) c(z = sum(as.numeric(x)), n = length(as.numeric(x)),p = mean(as.numeric(x))))))
   zj<- res[, 1]; nj <- res[, 2]; pj <- res[, 3]; vj <- pj*(1-pj); mj <- nj*pj; Vj <- nj*vj; V <- diag(vj);sp <- as.matrix((zj - nj * pj)/vj); ip <- diag(nj/vj); Zj <- (zj - nj*pj)/sqrt(nj*vj)
   sj <- (res[, 1] * log(res[, 3]) + (res[, 2] - res[, 1]) * log(1 - res[, 3]))
-  Lj <-ifelse((res[, 3]) == 0 | (res[, 3]) == 1, 0, sj)
-  sat <- sum (Lj)
-  r<-list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj))
-
-  r$call <- match.call()
-  class(r) <- "lsm"
-  r
+  Lj <-ifelse ((res[, 3]) == 0 | (res[, 3]) == 1, 0, sj)
+  sat <- sum(Lj)
+  r <- list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj)  )
 }
 
-print.lsm  <- function(x, ...)
+
+lsm.default <- function(formula , data)
+{
+
+  est <- lsm(formula , data)
+  est$call <- match.call()
+  class(est) <- "lsm"
+  est
+}
+
+print.lsm <- function(x, ...)
 {
   cat("\nCall:\n")
   print(x$call)
