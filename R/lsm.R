@@ -77,12 +77,14 @@ lsm <- function(formula , data )
   Lj <-ifelse ((res[, 3]) == 0 | (res[, 3]) == 1, 0, sj)
   sat <- sum(Lj)
   r <- list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj)  )
+
 }
+
+lsm.default<- function(x, ...) UseMethod("lsm")
 
 
 lsm.default <- function(formula , data)
 {
-
   est <- lsm(formula , data)
   est$call <- match.call()
   class(est) <- "lsm"
