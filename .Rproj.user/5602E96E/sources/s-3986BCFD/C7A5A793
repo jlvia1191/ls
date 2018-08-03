@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1533316060427.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C7A5A793",
+    "lastKnownWriteTime" : 1533318171,
+    "last_content_update" : 1533318171,
+    "path" : "~/GitHub/ls/man/lsm.Rd",
+    "project_path" : "man/lsm.Rd",
+    "properties" : {
+        "cursorPosition" : "4,18",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

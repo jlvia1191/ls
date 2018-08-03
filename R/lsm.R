@@ -61,14 +61,14 @@
 #' ## For more ease, use the following notation.
 #'  lsm(y~., data)
 #'
-#' @export lsm
 #' @import stats
-#'
+#' @export
 
 
 
 lsm <- function(formula , data )
 {
+
   mf <- model.frame(formula = formula, data = data)
 
   res <-do.call(rbind, (tapply(as.vector(mf[, 1]), t(apply((mf[, -1,drop =FALSE]), 1, paste0,collapse = "-")),function(x) c(z = sum(as.numeric(x)), n = length(as.numeric(x)),p = mean(as.numeric(x))))))
@@ -84,20 +84,23 @@ lsm <- function(formula , data )
   r$call <- match.call()
   class(r) <- "lsm"
   r
-}
-
-lsm.default<- function(x, ...) UseMethod("lsm")
 
 
-lsm.default <- function(formula , data)
+  }
+
+lsm1 <- function(x, ...) UseMethod("lsm1")
+
+lsm1.default  <- function(formula , data)
 {
+
   est <- lsm(formula , data)
+
   est$call <- match.call()
   class(est) <- "lsm"
   est
 }
 
-print.lsm <- function(x, ...)
+print.lsm1 <- function(x, ...)
 {
   cat("\nCall:\n")
   print(x$call)
@@ -106,8 +109,6 @@ print.lsm <- function(x, ...)
   cat("\nPopulations: \n")
   print(x$populations)
 }
-
-
 
 
 
