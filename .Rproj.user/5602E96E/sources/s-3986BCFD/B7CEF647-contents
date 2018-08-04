@@ -88,19 +88,19 @@ lsm <- function(formula , data )
 
   }
 
-lsm1 <- function(x, ...) UseMethod("lsm1")
+lsmm <- function(x, ...) UseMethod("lsmm")
 
 lsm1.default  <- function(formula , data)
 {
 
-  est <- lsm(formula , data)
+  est <- lsmm(formula , data)
 
   est$call <- match.call()
-  class(est) <- "lsm"
+  class(est) <- "lsmm"
   est
 }
 
-print.lsm1 <- function(x, ...)
+print.lsmm <- function(x, ...)
 {
   cat("\nCall:\n")
   print(x$call)
