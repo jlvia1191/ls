@@ -86,7 +86,7 @@ lsm <- function(formula , data )
 
 lsmm <- function(x, ...) UseMethod("lsmm")
 
-lsm1.default  <- function(formula , data)
+lsmm.default  <- function(formula , data)
 {
 
   est <- lsmm(formula , data)
