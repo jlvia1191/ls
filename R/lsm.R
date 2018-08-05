@@ -24,7 +24,7 @@
 #' CHD <- c(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0)
 #'
 #'  data <- data.frame (CHD, AGE)
-#' lsm(CHD ~ AGE , data)
+#' lsmm(CHD ~ AGE , data)
 #'
 #' # Other case.
 #'
@@ -41,10 +41,10 @@
 #'  x10 <- c(5, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8)
 #'
 #'  data <- data.frame (y, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10)
-#'  lsm(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
+#'  lsmm(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10, data)
 #'
 #' ## For more ease, use the following notation.
-#'  lsm(y~., data)
+#'  lsmm(y~., data)
 #'
 #' ## Other case.
 #'
@@ -56,17 +56,17 @@
 #'  x5 <- as.factor(c(5, 5, 5, 6, 6, 6, 6, 7, 7, 8, 8, 8))
 #'
 #'  data <- data.frame (y, x1, x2, x3, x4, x5)
-#'  lsm(y ~ x1 + x2 + x3 + x4 + x5, data)
+#'  lsmm(y ~ x1 + x2 + x3 + x4 + x5, data)
 #'
 #' ## For more ease, use the following notation.
-#'  lsm(y~., data)
+#'  lsmm(y~., data)
 #'
 #' @import stats
 #' @export
 
 
 
-lsm <- function(formula , data )
+lsmm <- function(formula , data )
 {
 
   mf <- model.frame(formula = formula, data = data)
@@ -81,22 +81,22 @@ lsm <- function(formula , data )
   sat <- sum (Lj)
   r<-list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj))
 
+  r$call <- match.call()
+  class(r) <- "lsm"
+  r
+}
 
-  }
+lsm <- function(x, ...) UseMethod("lsm")
 
-lsmm <- function(x, ...) UseMethod("lsmm")
-
-lsmm.default  <- function(formula , data)
+lsm.default  <- function(formula , data)
 {
-
   est <- lsmm(formula , data)
-
   est$call <- match.call()
-  class(est) <- "lsmm"
+  class(est) <- "lsm"
   est
 }
 
-print.lsmm <- function(x, ...)
+print.lsm <- function(x, ...)
 {
   cat("\nCall:\n")
   print(x$call)
@@ -105,8 +105,6 @@ print.lsmm <- function(x, ...)
   cat("\nPopulations: \n")
   print(x$populations)
 }
-
-
 
 
 
