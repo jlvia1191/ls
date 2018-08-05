@@ -81,9 +81,7 @@ lsmm <- function(formula , data )
   sat <- sum (Lj)
   r<-list(log_Likelihood = sat, populations = length(res) / 3,z_j = as.matrix(zj), n_j = nj, p_j = pj, fitted.values = Lj, v_j = vj, m_j = as.matrix(mj), V_j = Vj, V = V, S_p = sp, I_p = ip, Zast_j = as.matrix(Zj))
 
-  r$call <- match.call()
-  class(r) <- "lsm"
-  r
+
 }
 
 lsm <- function(x, ...) UseMethod("lsm")
